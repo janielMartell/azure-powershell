@@ -14,6 +14,7 @@
 
 using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Microsoft Azure Powershell - TrustedSigning")]
@@ -26,3 +27,6 @@ using System.Runtime.InteropServices;
 [assembly: Guid("554f926a-c81a-4363-8b72-8005d5ad1388")]
 [assembly: AssemblyVersion("0.1.0")]
 [assembly: AssemblyFileVersion("0.1.0")]
+#if !SIGN
+[assembly: InternalsVisibleTo("Microsoft.Azure.PowerShell.Cmdlets.TrustedSigning.Test")]
+#endif

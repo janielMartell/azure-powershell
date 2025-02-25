@@ -30,7 +30,7 @@ CompanyName = 'Microsoft Corporation'
 Copyright = 'Microsoft Corporation. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'Microsoft Azure PowerShell: TrustedSigning cmdlets'
+Description = 'Microsoft Azure PowerShell: TrustedSigning cmdlets in Windows PowerShell and PowerShell Core.'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '5.1'
@@ -54,7 +54,7 @@ DotNetFrameworkVersion = '4.7.2'
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '4.0.2'; })
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = 'TrustedSigning.Autorest/bin/Az.TrustedSigning.private.dll'
+RequiredAssemblies = 'TrustedSigning.Autorest/bin/Az.TrustedSigning.private.dll', 'Azure.Developer.TrustedSigning.CryptoProvider.dll', 'Azure.CodeSigning.dll'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 ScriptsToProcess = @()
@@ -63,10 +63,10 @@ ScriptsToProcess = @()
 TypesToProcess = @()
 
 # Format files (.ps1xml) to be loaded when importing this module
-FormatsToProcess = 'TrustedSigning.Autorest/Az.TrustedSigning.format.ps1xml'
+FormatsToProcess = 'TrustedSigning.Autorest/Az.TrustedSigning.format.ps1xml', 'TrustedSigning.format.ps1xml'
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @('TrustedSigning.Autorest/Az.TrustedSigning.psm1')
+NestedModules = @('TrustedSigning.Autorest/Az.TrustedSigning.psm1', 'Microsoft.Azure.PowerShell.Cmdlets.TrustedSigning.dll')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = 'Get-AzTrustedSigningAccount', 
@@ -79,7 +79,8 @@ FunctionsToExport = 'Get-AzTrustedSigningAccount',
                'Update-AzTrustedSigningAccount'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @()
+CmdletsToExport = 'Get-AzTrustedSigningCertificateProfileEku', 'Get-AzTrustedSigningCertificateProfileCertificateRoot', 
+               'Get-AzTrustedSigningCertificateProfileCertificateChain', 'Invoke-AzTrustedSigningCodeIntegrityPolicySigning'
 
 # Variables to export from this module
 # VariablesToExport = @()
@@ -102,7 +103,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'Azure', 'ResourceManager', 'ARM', 'PSModule', 'TrustedSigning'
+        Tags = 'Azure', 'ResourceManager', 'ARM', 'PSModule', 'TrustedSigning','CodeSigning'
 
         # A URL to the license for this module.
         LicenseUri = 'https://aka.ms/azps-license'
@@ -114,7 +115,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        # ReleaseNotes = ''
+        ReleaseNotes = ''
 
         # Prerelease string of this module
         # Prerelease = ''
@@ -127,7 +128,7 @@ PrivateData = @{
 
     } # End of PSData hashtable
 
-} # End of PrivateData hashtable
+ } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''

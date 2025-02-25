@@ -1,14 +1,14 @@
 ---
 Module Name: Az.TrustedSigning
-Module Guid: {{ Update Module Guid }}
-Download Help Link: {{ Update Download Link }}
-Help Version: {{ Update Help Version }}
-Locale: {{ Update Locale }}
+Module Guid: accceef6-8113-453a-a31c-4f2ce57893d6
+Download Help Link: https://learn.microsoft.com/powershell/module/az.TrustedSigning
+Help Version: 1.0.0.0
+Locale: en-US
 ---
 
 # Az.TrustedSigning Module
 ## Description
-{{ Fill in the Description }}
+Microsoft Azure PowerShell: TrustedSigning cmdlets
 
 ## Az.TrustedSigning Cmdlets
 ### [Get-AzTrustedSigningAccount](Get-AzTrustedSigningAccount.md)
@@ -35,3 +35,14 @@ Checks that the trusted signing account name is valid and is not already in use.
 ### [Update-AzTrustedSigningAccount](Update-AzTrustedSigningAccount.md)
 update a trusted signing account.
 
+### [Get-AzTrustedSigningCertificateProfileEku](Get-AzTrustedSigningCertificateProfileEku.md)
+Retrieve Azure.TrustedSigning customer Eku.
+
+### [Get-AzTrustedSigningCertificateProfileCertificateRoot](Get-AzTrustedSigningCertificateProfileCertificateRoot.md)
+Retrieve Azure.TrustedSigning Root Cert.
+
+### [Get-AzTrustedSigningCertificateProfileCertificateChain](Get-AzTrustedSigningCertificateProfileCertificateChain.md)
+Retrieve Azure.TrustedSigning Certificate Chain.
+
+### [Invoke-AzTrustedSigningCodeIntegrityPolicySigning](Invoke-AzTrustedSigningCodeIntegrityPolicySigning.md)
+Invoke CI Policy signing to Azure.TrustedSigning.
