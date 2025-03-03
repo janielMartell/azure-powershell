@@ -1,4 +1,3 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -19,15 +18,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticators", "..\Accoun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustedSigning", "TrustedSigning\TrustedSigning.csproj", "{4A74133F-7767-4BF6-B0A6-D05A31A1F38D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Az.TrustedSigning", "..\..\generated\TrustedSigning\TrustedSigning.Autorest\Az.TrustedSigning.csproj", "{D92D1A0E-70FE-43FD-8AFD-67079FDDFD7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustedSigning.Test", "TrustedSigning.Test\TrustedSigning.Test.csproj", "{8B35E3CF-8195-4ABA-A514-F20235DE178C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Az.TrustedSigning", "TrustedSigning.Autorest\Az.TrustedSigning.csproj", "{1A138406-FB2F-4CB6-AF27-6636096E428A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3EE35FB0-341F-4232-9E1E-3768A3057A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,10 +56,17 @@ Global
 		{4A74133F-7767-4BF6-B0A6-D05A31A1F38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A74133F-7767-4BF6-B0A6-D05A31A1F38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A74133F-7767-4BF6-B0A6-D05A31A1F38D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D92D1A0E-70FE-43FD-8AFD-67079FDDFD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D92D1A0E-70FE-43FD-8AFD-67079FDDFD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D92D1A0E-70FE-43FD-8AFD-67079FDDFD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D92D1A0E-70FE-43FD-8AFD-67079FDDFD7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B35E3CF-8195-4ABA-A514-F20235DE178C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B35E3CF-8195-4ABA-A514-F20235DE178C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B35E3CF-8195-4ABA-A514-F20235DE178C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B35E3CF-8195-4ABA-A514-F20235DE178C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A138406-FB2F-4CB6-AF27-6636096E428A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A138406-FB2F-4CB6-AF27-6636096E428A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A138406-FB2F-4CB6-AF27-6636096E428A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A138406-FB2F-4CB6-AF27-6636096E428A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3EE35FB0-341F-4232-9E1E-3768A3057A25} = {D150C1EF-6976-4624-9E69-6E57793805C5}
