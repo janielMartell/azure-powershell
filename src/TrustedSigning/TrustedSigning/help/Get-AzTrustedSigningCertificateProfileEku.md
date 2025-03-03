@@ -1,6 +1,6 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.CodeSigning.dll-Help.xml
-Module Name: Az.CodeSigning
+external help file: Microsoft.Azure.PowerShell.Cmdlets.TrustedSigning.dll-Help.xml
+Module Name: Az.TrustedSigning
 ms.assetid: 846F781C-73A3-4BBE-ABD9-897371109FBE
 online version: https://learn.microsoft.com/powershell/module/az.codesigning/Get-AzTrustedSigningCertificateProfileEku
 schema: 2.0.0
@@ -13,11 +13,18 @@ Retrieve Azure.TrustedSigning customer Eku
 
 ## SYNTAX
 
-### InteractiveSubmit (Default)
+### ByAccountProfileNameParameterSet (Default)
 ```
-Get-AzTrustedSigningCertificateProfileEku [-AccountName] <String> [-ProfileName] <String> -EndpointUrl <String> -MetadataFilePath <String>
+Get-AzTrustedSigningCertificateProfileEku [-AccountName] <String> [-ProfileName] <String>
+ [-EndpointUrl] <String> [-DefaultProfile <IAzureContextContainer>] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
+### ByMetadataFileParameterSet
+```
+Get-AzTrustedSigningCertificateProfileEku [-MetadataFilePath] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
 
 ## DESCRIPTION
 The **Get-AzTrustedSigningCertificateProfileEku ** cmdlet retrieves customer Eku.
@@ -29,7 +36,7 @@ Another set uses MetadataFilePath.
 
 ### Example 1: Retrieve customer Eku by account and profile name
 ```powershell
-Get-AzTrustedSigningCertificateProfileEku -AccountName 'contoso' -ProfileName 'contososigning' -EndpointUrl 'https://wus.codesigning.azure.net' 
+Get-AzTrustedSigningCertificateProfileEku -AccountName 'contoso' -ProfileName 'contososigning' -EndpointUrl 'https://wus.codesigning.azure.net'
 ```
 
 ```output
@@ -58,23 +65,25 @@ Specifies Azure CodeSigning AccountName used to sign CI policy.
 ```yaml
 Type: System.String
 Parameter Sets: ByAccountProfileNameParameterSet
+Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ProfileName
-Specifies Azure CodeSigning ProfileName used to sign CI policy.
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.String
-Parameter Sets: ByAccountProfileNameParameterSet
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
 
-Required: True
-Position: 2
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -85,12 +94,13 @@ Specifies Azure CodeSigning Endpoint used to sign CI policy. It's an Url, format
 
 ```yaml
 Type: System.String
-Parameter Sets: ByAccountProfileNameParameterSet, ByMetadataFileParameterSet
+Parameter Sets: ByAccountProfileNameParameterSet
+Aliases:
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -105,9 +115,40 @@ Specifies Azure CodeSigning Metadata file path used to sign CI policy. It's a fi
 ```yaml
 Type: System.String
 Parameter Sets: ByMetadataFileParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProfileName
+Specifies Azure CodeSigning ProfileName used to sign CI policy.
+
+```yaml
+Type: System.String
+Parameter Sets: ByAccountProfileNameParameterSet
+Aliases:
 
 Required: True
 Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: System.Management.Automation.ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

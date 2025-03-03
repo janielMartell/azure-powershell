@@ -17,6 +17,18 @@ Get a trusted Signing Account.
 ### [Get-AzTrustedSigningCertificateProfile](Get-AzTrustedSigningCertificateProfile.md)
 Get details of a certificate profile.
 
+### [Get-AzTrustedSigningCertificateProfileCertificateChain](Get-AzTrustedSigningCertificateProfileCertificateChain.md)
+Retrieve Azure.TrustedSigning Certificate Chain
+
+### [Get-AzTrustedSigningCertificateProfileCertificateRoot](Get-AzTrustedSigningCertificateProfileCertificateRoot.md)
+Retrieve Azure.TrustedSigning Root Cert
+
+### [Get-AzTrustedSigningCertificateProfileEku](Get-AzTrustedSigningCertificateProfileEku.md)
+Retrieve Azure.TrustedSigning customer Eku
+
+### [Invoke-AzTrustedSigningCodeIntegrityPolicySigning](Invoke-AzTrustedSigningCodeIntegrityPolicySigning.md)
+Invoke CI Policy signing to Azure.TrustedSigning
+
 ### [New-AzTrustedSigningAccount](New-AzTrustedSigningAccount.md)
 create a trusted Signing Account.
 
@@ -35,14 +47,3 @@ Checks that the trusted signing account name is valid and is not already in use.
 ### [Update-AzTrustedSigningAccount](Update-AzTrustedSigningAccount.md)
 update a trusted signing account.
 
-### [Get-AzTrustedSigningCertificateProfileEku](Get-AzTrustedSigningCertificateProfileEku.md)
-Retrieve Azure.TrustedSigning customer Eku.
-
-### [Get-AzTrustedSigningCertificateProfileCertificateRoot](Get-AzTrustedSigningCertificateProfileCertificateRoot.md)
-Retrieve Azure.TrustedSigning Root Cert.
-
-### [Get-AzTrustedSigningCertificateProfileCertificateChain](Get-AzTrustedSigningCertificateProfileCertificateChain.md)
-Retrieve Azure.TrustedSigning Certificate Chain.
-
-### [Invoke-AzTrustedSigningCodeIntegrityPolicySigning](Invoke-AzTrustedSigningCodeIntegrityPolicySigning.md)
-Invoke CI Policy signing to Azure.TrustedSigning.

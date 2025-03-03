@@ -1,6 +1,6 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.CodeSigning.dll-Help.xml
-Module Name: Az.CodeSigning
+external help file: Microsoft.Azure.PowerShell.Cmdlets.TrustedSigning.dll-Help.xml
+Module Name: Az.TrustedSigning
 ms.assetid: 846F781C-73A3-4BBE-ABD9-897371109FBE
 online version: https://learn.microsoft.com/powershell/module/az.codesigning/Get-AzTrustedSigningCertificateProfileCertificateRoot
 schema: 2.0.0
@@ -13,12 +13,18 @@ Retrieve Azure.TrustedSigning Root Cert
 
 ## SYNTAX
 
-### InteractiveSubmit (Default)
+### ByAccountProfileNameParameterSet (Default)
 ```
-Get-AzTrustedSigningCertificateProfileCertificateRoot [-AccountName] <String> [-ProfileName] <String> -EndpointUrl <String> 
--MetadataFilePath <String> 
+Get-AzTrustedSigningCertificateProfileCertificateRoot [-AccountName] <String> [-ProfileName] <String>
+ [-EndpointUrl] <String> [-Destination] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
+### ByMetadataFileParameterSet
+```
+Get-AzTrustedSigningCertificateProfileCertificateRoot [-MetadataFilePath] <String> [-Destination] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+```
 
 ## DESCRIPTION
 The **Get-AzTrustedSigningCertificateProfileCertificateRoot** cmdlet retrieves Azure CodeSigning Root Cert.
@@ -26,6 +32,7 @@ Use this cmdlet to retrieve Azure CodeSigning Root Cert.
 There are two sets of parameters. One set uses AccountName, ProfileName, and EndpointUrl. 
 Another set uses MetadataFilePath.
 Destination is the downloaded root cert file path, which incldues the file name and extension .cer.
+
 ## EXAMPLES
 
 ### Example 1: Retrieve a root cert by account and profile name
@@ -63,25 +70,42 @@ Specifies Azure CodeSigning AccountName used to sign CI policy.
 ```yaml
 Type: System.String
 Parameter Sets: ByAccountProfileNameParameterSet
+Aliases:
 
 Required: True
-Position: 1
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProfileName
-Specifies Azure CodeSigning ProfileName used to sign CI policy.
+### -Destination
+Specifies the downloaed root cert file path. 
 
 ```yaml
 Type: System.String
-Parameter Sets: ByAccountProfileNameParameterSet
+Parameter Sets: (All)
+Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -90,12 +114,13 @@ Specifies Azure CodeSigning Endpoint used to sign CI policy. It's an Url, format
 
 ```yaml
 Type: System.String
-Parameter Sets: ByAccountProfileNameParameterSet, ByMetadataFileParameterSet
+Parameter Sets: ByAccountProfileNameParameterSet
+Aliases:
 
 Required: True
-Position: 3
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -110,23 +135,40 @@ Specifies Azure CodeSigning Metadata file path used to sign CI policy. It's a fi
 ```yaml
 Type: System.String
 Parameter Sets: ByMetadataFileParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProfileName
+Specifies Azure CodeSigning ProfileName used to sign CI policy.
+
+```yaml
+Type: System.String
+Parameter Sets: ByAccountProfileNameParameterSet
+Aliases:
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Destination
-Specifies the downloaed root cert file path. 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
 
 ```yaml
-Type: System.String
-Parameter Sets: ByAccountProfileNameParameterSet, ByMetadataFileParameterSet
+Type: System.Management.Automation.ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
-Required: True
-Position: 5
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
